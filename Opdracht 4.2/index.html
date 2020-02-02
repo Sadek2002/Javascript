@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #slideholder {
+            height: 300px;
+            width: 300px;
+            border: 3px black solid;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+<div id="slideholder"></div>
+<script>
+    var plaatjes = [1,2,3,4,5,6,7,8,9];
+    var teller = 0;
+    var slideholder = document.getElementById("slideholder");
+    slideholder.style.backgroundImage = "url('img/tijger9.jpg')";
+    
+    slideholder.addEventListener("click", function () {
+        slideholder.style.backgroundImage = "url('img/tijger" + getTijger() +".jpg')";
+    });
+
+    function  getTijger() {
+        if (teller >= plaatjes.length) {
+            teller = 1;
+    } else {
+        teller++;
+    }
+        console.log(teller);
+        return teller;
+    }
+</script>
+</body>
+</html>
